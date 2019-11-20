@@ -8,7 +8,7 @@ char -->
     "E";"F";"G";"H";"I";"J";"K";"L";"M";"N";
     "O";"P";"Q";"R";"S";"T";"U";"V";"W";"X";
     "Y";"Z".
-    
+
 numbers -->
     number;number,numbers.
 
@@ -23,8 +23,12 @@ string -->
 
 spasi -->
     " ".
-    
+
+importFunc -->
+    "import",spasi,chars,("as",spasi,chars;"").
 total -->
+    {write('masuk sini1')},importFunc,{nl,write('masuk sini'),!};
+    {write('taik')},
     chars,spasi,(numbers;floats;string).
 
 checkingValidity([]):-!.
@@ -34,4 +38,4 @@ checkingValidity([H|T]):-nl,
     checkingValidity(T),!.
 
 w:-
-    phrase_from_file(total,'testing.txt'),write(total).
+    phrase_from_file(total,'testing.txt').
