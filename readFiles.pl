@@ -1,6 +1,7 @@
 :- dynamic(temp/1).
 :- dynamic(list/1).
 :- dynamic(stringList/1).
+:- dynamic(stringProcessed/1).
 
 main:-
     open('houses.txt',read,Str),
@@ -17,9 +18,10 @@ readWord(InStream,W):-
     assert(stringList([])),
     parsing(Chars),nl,
     list(A),
+    write(A),nl,
     converter(A),
     stringList(Hasil),
-    write(Hasil).
+    write(Hasil),nl.
 
 checkCharAndReadRest(-1,[],_):- !.
 
@@ -55,19 +57,6 @@ parsing([-999|Chars]):-
     assert(temp([])),
     parsing(Chars),!.
 
-parsing([10|Chars]) :-
-    temp(A),
-    list(B),
-
-    append(B,[A],C),
-    retract(list(_)),
-    assert(list(C)),
-    
-    retract(temp(_)),
-    assert(temp([])),
-    parsing(Chars),!.
-
-
 parsing([Char|Chars]) :-
     temp(A),
     append(A,[Char],Y),
@@ -84,3 +73,7 @@ converter([ListOfInteger|Sisa]) :-
     retract(stringList(_)),
     assert(stringList(NewZ)),
     converter(Sisa).
+
+copyList([],[]) :- !.
+copyList([A|B], [A|C]) :- 
+    copyList(B,C).
