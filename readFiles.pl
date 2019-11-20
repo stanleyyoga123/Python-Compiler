@@ -9,7 +9,9 @@ main:-
 
 readWord(InStream,W):-
     get_code(InStream,Char),
-    checkCharAndReadRest(Char,Chars,InStream),
+    checkCharAndReadRest(Char,Charss,InStream),
+    append(Charss,[-999],Chars),
+    write(Chars),nl,
     assert(temp([])),
     assert(list([])),
     assert(stringList([])),
@@ -21,7 +23,7 @@ readWord(InStream,W):-
 
 checkCharAndReadRest(-1,[],_):- !.
 
-checkCharAndReadRest(end_of_file,[],_):-  !.
+checkCharAndReadRest(end_of_file,[],_):- !.
 
 checkCharAndReadRest(Char,[Char|Chars],InStream):-
     get_code(InStream,NextChar),
@@ -30,6 +32,18 @@ checkCharAndReadRest(Char,[Char|Chars],InStream):-
 parsing([]) :- !.
 
 parsing([32|Chars]) :-
+    temp(A),
+    list(B),
+
+    append(B,[A],C),
+    retract(list(_)),
+    assert(list(C)),
+    
+    retract(temp(_)),
+    assert(temp([])),
+    parsing(Chars),!.
+
+parsing([-999|Chars]):-
     temp(A),
     list(B),
 

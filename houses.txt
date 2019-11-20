@@ -1,4 +1,1 @@
-pada hari
-minggu
-kuturut
-ayah ke kota. 
+import sysutils.babi
