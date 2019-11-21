@@ -1,7 +1,13 @@
-:- include('tbfo.pl').  
+:- include('utility.pl').  
+
+insideImport -->
+    variable;variable,".",insideImport.
 
 imports -->
-    "import ", (alphabet;numbers;float;string).
+    "import", space, insideImport, (space;blank).
 
-check -->
-    phrase_from_file(imports,'testing.txt').
+importsAs -->
+    imports, "as", space, variable, (space;blank).
+
+importsFrom -->
+    "from", space, insideImport, space, "import", space, insideImport, (space;blank).

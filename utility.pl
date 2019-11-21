@@ -27,32 +27,19 @@ spasi -->
 blank -->
     "".
 
-blanks -->
-    blank;blank,blanks.
-
 space -->
     spasi;spasi,space.    
 
+helper -->
+    char;
+    number;((char,helper);(number,helper));blank.
+
+variable -->
+    char;
+    char,((number,helper);(char,helper)).
 
 total -->
-    (char;spasi;numbers;floats;string).
-
-mark1 -->
-    "import".
-
-mark2 -->
-    "as".
-
-imports -->
-    mark1, space, (chars;char,(numbers;chars)),(blank;space).
-
-importsAs -->
-    imports, space, mark2, (chars,(blank;chars;numbers)),(blank;space).
-
-checkingValidity([]):-!.
-checkingValidity([H|T]):-nl,
-    write(T),nl,nl,
-    checkingValidity(T),!.
+    chars.
 
 w:-
-    phrase_from_file(total,'testing.txt').
+    phrase_from_file(operation,'testing.txt').
