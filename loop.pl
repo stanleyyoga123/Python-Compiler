@@ -26,8 +26,13 @@ loop1 -->
 looptotal -->
     loop;loop1.
 
+isiArray -->
+    (variable;numbers);
+    ((variable;numbers),(blank;space),",",(blank;space),(variable;numbers));
+    ((variable;numbers),(blank;space),",",(blank;space),(variable;numbers),(blank;space),",",(blank;space),(variable;numbers)).
+
 array -->
-    siku1,(blank;space),(variable;numbers),(blank;space),untuk,(blank;space),(variable;numbers),(blank;space),in,(blank;space),range,(blank;space),(bracket1),(variable;numbers),(blank;space),(variable;numbers),(blank;space),(bracket2),
+    siku1,(blank;space),(variable;numbers),(blank;space),untuk,(blank;space),(variable;numbers),(blank;space),in,(blank;space),range,(blank;space),(bracket1),(blank;space),isiArray,(blank;space),(bracket2),
     (blank;space),siku2.
 
 a :- phrase_from_file(looptotal,'testing.txt').

@@ -7,10 +7,11 @@
 :- include('logical.pl').
 :- include('loop.pl').
 :- include('raise.pl').
+:- include('assign.pl').
 
 run -->
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise);
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise),(space;"\n"),run.
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional);
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional),(space;"\n"),run.
 
 jalan :-
     phrase_from_file(run,'testing.txt').

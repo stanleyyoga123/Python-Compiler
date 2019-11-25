@@ -23,8 +23,22 @@ operation -->
 
 bracket -->
     (operation;blank);
-    ((operation;variablebracket;"None"),logOp,"(",bracket;operation;variablebracket;None),
+    ((operation;variablebracket;"None"),logOp,"(",bracket;operation;variablebracket;"None"),
     (")",logOp,bracket;")";")",logOp,variablebracket;"None").
 
+inside -->
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign);
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign),(space;"\n"),inside.
+
+conditionalElse -->
+    blank;
+    ("elif",(space;blank),bracket,(space;blank),":","\n",inside);
+    ("else",(space;blank),":","\n",inside);
+    ("elif",(space;blank),bracket,(space;blank),":","\n",inside,conditionalElse);
+    ("else",(space;blank),":","\n",inside,conditionalElse).
+
 conditional -->
-    "if", (space;blank), bracket, (space;blank), ":", "\n", (blank;space),anythingButSampah, (blank;("elif";"else"), (space;blank), bracket, (space;blank), ":", (space;blank),"\n", anythingButSampah),conditional.
+    blank;
+    "if", (space;blank), bracket, (space;blank), ":", "\n", inside,
+    (blank;((space;blank),conditionalElse)),
+    conditional.
