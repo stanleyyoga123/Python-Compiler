@@ -1,1 +1,1 @@
-a<b<(a<b>c)>a<b<(a<b)<a<b<(a<b)
+for bangsat,ttai in range (bgst,s,s,s)d :

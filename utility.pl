@@ -1,3 +1,4 @@
+
 number -->
     "1";"2";"3";"4";"5";"6";"7";"8";"9";"0".
 
@@ -8,7 +9,14 @@ char -->
     "E";"F";"G";"H";"I";"J";"K";"L";"M";"N";
     "O";"P";"Q";"R";"S";"T";"U";"V";"W";"X";
     "Y";"Z".
-    
+bracket1 -->
+    "(".
+
+bracket2 -->
+    ")".
+
+koma -->
+    ",".
 numbers -->
     number;number,numbers.
 
@@ -41,5 +49,17 @@ variable -->
 total -->
     chars.
 
+spaceVariable -->
+    variable;
+    (variable,space,spaceVariable).
+
+variablebracket -->
+    variable,(space;blank);
+    (((blank;space),variable,(blank;space));(blank;space)),
+    "(",
+    (space;blank;(space,variablebracket);(blank,variablebracket)),
+    ")",
+    (blank;space).
+
 w:-
-    phrase_from_file(bracket,'testing.txt').
+    phrase_from_file(variablebracket,'testing.txt').
