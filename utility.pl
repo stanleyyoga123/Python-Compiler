@@ -43,5 +43,22 @@ total -->
 
 ignore -->
     space;blank.
+
+operatorminplus -->
+    "-";"+".
+minusPlus -->
+    operatorminplus;(operatorminplus;space),(minusPlus).
+
+expression-->
+    "+";"-";"/";"*";"**";"//";"%";"&";"|";"^";"~";"<<";">>".
+
+operator1 -->
+    ignore,(minusPlus;blank),(variable;numbers),(ignore,expression,ignore,(minusPlus;blank)),ignore,(operator1;blank),ignore.
+
+operator -->
+    operator1,(variable;numbers),ignore.
+
+struck-->
+    ignore,variable,ignore,(".",struck;blank),ignore.
 w:-
-    phrase_from_file(bracket,'testing.txt').
+    phrase_from_file(struck,'testing.txt').

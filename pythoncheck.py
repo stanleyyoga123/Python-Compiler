@@ -1,2 +1,1 @@
-a = 3
-print(str(a))
+a . b . c. d. e=1
