@@ -8,15 +8,8 @@ char -->
     "u";"v";"w";"x";"y";"z";"A";"B";"C";"D";
     "E";"F";"G";"H";"I";"J";"K";"L";"M";"N";
     "O";"P";"Q";"R";"S";"T";"U";"V";"W";"X";
-    "Y";"Z".
-bracket1 -->
-    "(".
-
-bracket2 -->
-    ")".
-
-koma -->
-    ",".
+    "Y";"Z";"_".
+    
 numbers -->
     number;number,numbers.
 
@@ -63,3 +56,24 @@ variablebracket -->
 
 w:-
     phrase_from_file(variablebracket,'testing.txt').
+ignore -->
+    space;blank.
+
+operatorminplus -->
+    "-";"+".
+minusPlus -->
+    operatorminplus;(operatorminplus;space),(minusPlus).
+
+expression-->
+    "+";"-";"/";"*";"**";"//";"%";"&";"|";"^";"~";"<<";">>".
+
+operator1 -->
+    ignore,(minusPlus;blank),(variable;numbers),(ignore,expression,ignore,(minusPlus;blank)),ignore,(operator1;blank),ignore.
+
+operator -->
+    operator1,(variable;numbers),ignore.
+
+struck-->
+    ignore,variable,ignore,(".",struck;blank),ignore.
+w:-
+    phrase_from_file(struck,'testing.txt').

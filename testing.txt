@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 for bangsat,ttai in range (bgst,s,s,s)d :
+=======
+a.b.cc.e
+>>>>>>> b9b25b7ed05d2dc65e8ed80dd2984321e6aba187
