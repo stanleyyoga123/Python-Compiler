@@ -7,16 +7,17 @@ logOp -->
     "is not"; "not in".
 
 insideBracket -->
-    (blank;variable;numbers;operator), logOp, (blank;variable;numbers;operator).
+    (blank;variable;numbers;operator), logOp, (variable;numbers;operator).
 
 operation -->
     insideBracket;
     insideBracket,(space;blank),operation.
 
 bracket -->
-    (operation;blank);
-    "(",bracket,(blank;logOp),p.
+    operation;
+    (operation,logOp,"(",bracket;blank),(")";logOp,operation,bracket).
 
-p -->
-    ")";
-    ")",p.
+bracket -->
+    (operation;blank);
+    (blank;"("),(blank;logOp),operation,(blank;(logOp,bracket)),(blank;")";logOp,bracket).
+

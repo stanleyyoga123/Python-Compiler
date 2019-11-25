@@ -42,4 +42,4 @@ total -->
     chars.
 
 w:-
-    phrase_from_file(operation,'testing.txt').
+    phrase_from_file(bracket,'testing.txt').

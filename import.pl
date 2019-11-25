@@ -11,3 +11,6 @@ importsAs -->
 
 importsFrom -->
     "from", space, insideImport, space, "import", space, insideImport, (space;blank).
+
+importsFromAs -->
+    "from", space, insideImport, space, "import", space, insideImport, space, "as", insideImport, (space;blank).
