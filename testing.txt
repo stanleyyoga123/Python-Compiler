@@ -1,6 +1,9 @@
-if a==b :
-    a = b
-elif a==n :
-    a = s
+if a==b:
+print(df)
+return 2
+elif a==c:
+print(sfs)
+return 4
 else:
-    a = s
+print(fsd)
+return b
