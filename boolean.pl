@@ -1,5 +1,3 @@
-:- include('utility.pl').
-
 true -->
     "true".
 

@@ -10,6 +10,9 @@ char -->
     "O";"P";"Q";"R";"S";"T";"U";"V";"W";"X";
     "Y";"Z";"_".
     
+bracket1 --> "(".
+bracket2 --> ")".
+koma --> ",".
 numbers -->
     number;number,numbers.
 

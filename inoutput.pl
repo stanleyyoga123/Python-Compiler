@@ -1,5 +1,3 @@
-:- include('function.pl').
-
 prt -->
     "print".
 

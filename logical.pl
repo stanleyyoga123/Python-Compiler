@@ -1,6 +1,3 @@
-:- include('arithmetic.pl').
-:- include('utility.pl').
-
 logOp -->
     ">"; "<"; ">="; "<="; "=="; "!="; "<>";
     "and"; "or"; "not"; "in"; "is";
@@ -26,5 +23,8 @@ operation -->
 
 bracket -->
     (operation;blank);
-    ((operation;variablebracket),logOp,"(",bracket;operation;variablebracket),
-    (")",logOp,bracket;")";")",logOp,variablebracket).
+    ((operation;variablebracket;"None"),logOp,"(",bracket;operation;variablebracket;None),
+    (")",logOp,bracket;")";")",logOp,variablebracket;"None").
+
+conditional -->
+    "if", (space;blank), bracket, (space;blank), ":", "\n", (blank;space),anythingButSampah, (blank;("elif";"else"), (space;blank), bracket, (space;blank), ":", (space;blank),"\n", anythingButSampah),conditional.
