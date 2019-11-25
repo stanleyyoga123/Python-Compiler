@@ -8,7 +8,9 @@ operator -->
 operatorminplus -->
     "-","+".
 minusPlus -->
-    operatormin;(operatormin;blank;space),(minusPlus;blank).
+    operatorminplus;(operatormin;blank;space),(minusPlus;blank).
 
 equal -->
     "=".
+
+check:- phrase_from_file(operator,'testing.txt').
