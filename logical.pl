@@ -14,10 +14,6 @@ operation -->
     insideBracket,(space;blank),operation.
 
 bracket -->
-    operation;
-    (operation,logOp,"(",bracket;blank),(")";logOp,operation,bracket).
-
-bracket -->
     (operation;blank);
-    (blank;"("),(blank;logOp),operation,(blank;(logOp,bracket)),(blank;")";logOp,bracket).
-
+    (operation,logOp,"(",bracket;operation),
+    (")",logOp,bracket;")").
