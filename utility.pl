@@ -7,7 +7,7 @@ char -->
     "u";"v";"w";"x";"y";"z";"A";"B";"C";"D";
     "E";"F";"G";"H";"I";"J";"K";"L";"M";"N";
     "O";"P";"Q";"R";"S";"T";"U";"V";"W";"X";
-    "Y";"Z".
+    "Y";"Z";"_".
     
 numbers -->
     number;number,numbers.
@@ -41,5 +41,7 @@ variable -->
 total -->
     chars.
 
+ignore -->
+    space;blank.
 w:-
     phrase_from_file(bracket,'testing.txt').

@@ -1,16 +1,18 @@
-
+:-include('utility.pl').
 operator1 -->
-    (blank,space),(minusPlus;blank),(variable;numbers),((space;blank),("+";"-";"/";"*";"**";"//";"%";"&";"|";"^";"~";"<<";">>"),(blank;space),(minusPlus;blank)),(operator1;blank).
+    ignore,(minusPlus;blank),(variable;numbers),(ignore,("+";"-";"/";"*";"**";"//";"%";"&";"|";"^";"~";"<<";">>"),ignore,(minusPlus;blank)),ignore,(operator1;blank),ignore.
 
 operator -->
-    operator1,(variable;numbers),(blank;space).
+    operator1,(variable;numbers),ignore.
 
+operatorEqual -->ignore,variable,ignore,("=";"+=";"-=";"*=";"/=";"%=";"**=";"//="),operator.
+    
 operatorminplus -->
-    "-","+".
+    "-";"+".
 minusPlus -->
-    operatorminplus;(operatormin;blank;space),(minusPlus;blank).
+    operatorminplus;(operatorminplus;space),(minusPlus).
 
 equal -->
     "=".
 
-check:- phrase_from_file(operator,'testing.txt').
+check:- phrase_from_file(operatorEqual,'testing.txt').
