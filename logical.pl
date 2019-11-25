@@ -6,8 +6,19 @@ logOp -->
     "and"; "or"; "not"; "in"; "is";
     "is not"; "not in".
 
+variablebracket -->
+    variable;
+    (blank,variable),
+    (space;blank),
+    "(",
+    (space;blank),
+    (variable;variablebracket;(blank;space)),
+    (space;blank),
+    ")",
+    (blank;variable;variablebracket).
+
 insideBracket -->
-    (blank;variable;numbers;operator), logOp, (variable;numbers;operator).
+    (blank;variable;numbers;operator;variablebracket), logOp, (variable;numbers;operator;variablebracket).
 
 operation -->
     insideBracket;
@@ -15,5 +26,5 @@ operation -->
 
 bracket -->
     (operation;blank);
-    (operation,logOp,"(",bracket;operation),
-    (")",logOp,bracket;")").
+    ((operation;variablebracket),logOp,"(",bracket;operation;variablebracket),
+    (")",logOp,bracket;")";")",logOp,variablebracket).
