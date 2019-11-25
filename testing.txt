@@ -3,4 +3,4 @@ if a==b :
 elif a==n :
     a = s
 else:
-    a = s
+    a = ss
