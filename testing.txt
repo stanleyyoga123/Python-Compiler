@@ -1,1 +1,1 @@
-a<b<(a<b>c)>a<b<(a<b)<a<b<(a<b)
+a<x<s<(a<x<(a<x)>s)>s<a<(a>s)
