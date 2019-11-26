@@ -9,10 +9,11 @@
 :- include('raise.pl').
 :- include('assign.pl').
 :- include('return.pl').
+:- include('struct.pl').
 
 run -->
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise);
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise),(space;"\n"),run.
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;struck);
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;struck),(space;"\n"),run.
 
 jalan :-
-    phrase_from_file(run,'testing.txt').
+    phrase_from_file(struck,'testing.txt').
