@@ -1,15 +1,8 @@
-operator1 -->
-    (blank;space),(minusPlus;blank),(variable;numbers),((space;blank),("+";"-";"/";"*";"**";"//";"%";"&";"|";"^";"~";"<<";">>"),(blank;space),(minusPlus;blank)),(blank;space),(operator1;blank),(blank;space).
+:-include('utility.pl').
+operatorEqual -->
+    ignore,variable,ignore,equalOperator,(operator;variable;number).
 
-operator -->
-    operator1,(variable;numbers),(blank;space).
+equalOperator -->
+    "=";"+=";"-=";"*=";"/=";"%=";"**=";"//=".
 
-operatorminplus -->
-    "-";"+".
-minusPlus -->
-    operatorminplus;(operatorminplus;space),(minusPlus).
-
-equal -->
-    "=".
-
-a :- phrase_from_file(operator,'testing.txt').
+check:- phrase_from_file(operatorEqual,'testing.txt').

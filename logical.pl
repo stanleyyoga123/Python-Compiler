@@ -3,6 +3,27 @@ logOp -->
     "and"; "or"; "not"; "in"; "is";
     "is not"; "not in".
 
+operan1logic -->
+    (space,operan1logic);
+    (variable,operatorlogic);
+    (numbers,operatorlogic);
+    (signvarnum,operatorlogic).
+
+operatorlogic -->
+    (space,operatorlogic);
+    (space,variable);
+    (space,numbers);
+    (space,signvarnum);
+    (logOp,variable);
+    (logOp,numbers);
+    (logOp,signvarnum);
+    (logOp,operan1);
+    (logOp,operator);
+    (variable,space);
+    (numbers,space);
+    (signvarnum,space)
+    .
+
 variablebracket -->
     variable;
     (blank,variable),
