@@ -1,46 +1,33 @@
 :-include('utility.pl').
 insideImport -->
     space,insideImport;
-    space,variable;
+    variable;
     variable,space;
     variable,behindInsideImport.
 
 behindInsideImport-->
     space,behindInsideImport;
-    dot,insideImport.
-
-kataImport--> "import".
-
+    ".",insideImport.
+    
 imports -->
     space,imports;
-    kataImport, afterImports.
+    "import", space,afterImports.
 
 afterImports-->
-    space,insideImport;
+    insideImport;
     insideImport,space.
 
 importsAs -->
     space,importsAs;
-    imports, asBehindimport.
-
-asKata-->"as".
-
-asBehindimport-->
-    space,asBehindimport;
-    asKata,insideImport.
-
-fromKata--> "from".
+    imports, space, "as", space, insideImport.
 
 importsFrom -->
-    fromKata, behindFrom.
+    "from", space, insideImport, space, "import", space, insideImport.
 
-behindFrom -->
-    space,behindFrom;
-    insideImport,imports;
-    insideImport,importsAs.
-
+importsFromAs -->
+    "from", space, insideImport, space, "import", space, insideImport, space, "as", insideImport.
 
 allTypeImport -->
-    importsFrom;importsAs;imports.
+    importsFromAs;importsFrom;importsAs;imports.
 
 a:-phrase_from_file(allTypeImport,'testing.txt').
