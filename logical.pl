@@ -16,17 +16,16 @@ operatorlogic -->
     (space,variable);
     (space,numbers);
     (space,signvarnum);
-    (space,operan1logic);
     (logOp,variable);
     (logOp,numbers);
     (logOp,signvarnum);
     (logOp,operan1);
-    (logOp,operator);
-    (logOp,operan1);
+    (logOp,operatorlogic);
+    (logOp,operan1logic);
     (variable,space);
     (numbers,space);
     (signvarnum,space);
-    (operan1,space)
+    (operan1logic,space)
     .
 
 variablebracket -->
