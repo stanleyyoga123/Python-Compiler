@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 x = asdsad(input('sdadsa'))
+=======
+for a,v,d in range(asd,sd,d):
+>>>>>>> 3d193f66b5353baa42a31e835e22cd83158f9438
