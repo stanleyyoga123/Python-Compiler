@@ -1,1 +1,1 @@
-print(str(dsfs)+sdfds)
+with open('example.txt','w') as my:

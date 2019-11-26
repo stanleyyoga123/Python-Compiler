@@ -1,4 +1,0 @@
- for c in text:
-            ascii = ord(c)
- time_end = time.perf_counter()
-     time_end = time.perf_counter()
