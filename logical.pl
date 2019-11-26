@@ -3,6 +3,27 @@ logOp -->
     "and"; "or"; "not"; "in"; "is";
     "is not"; "not in".
 
+operan1logic -->
+    (space,operan1logic);
+    (variable,operatorlogic);
+    (numbers,operatorlogic);
+    (signvarnum,operatorlogic).
+
+operatorlogic -->
+    (space,operatorlogic);
+    (space,variable);
+    (space,numbers);
+    (space,signvarnum);
+    (logOp,variable);
+    (logOp,numbers);
+    (logOp,signvarnum);
+    (logOp,operan1);
+    (logOp,operator);
+    (variable,space);
+    (numbers,space);
+    (signvarnum,space)
+    .
+
 variablebracket -->
     variable;
     (blank,variable),
@@ -32,7 +53,6 @@ inside -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;struck),(space;"\n"),inside.
 
 conditionalElse -->
-    (space;blank);
     (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),inside);
     (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),rtn);
     
@@ -50,7 +70,7 @@ conditionalElse -->
     (space;blank),("else",(space;blank),":","\n",(inside,"\n",(space;blank),rtn),conditionalElse).
 
 conditional -->
-    blank;
+    (blank;space);
     "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",(space;blank),rtn;(space;blank),rtn;blank),
     (blank;((space;blank),conditionalElse)),
     conditional.

@@ -34,5 +34,3 @@ isiArray -->
 array -->
     siku1,(blank;space),(variable;numbers),(blank;space),untuk,(blank;space),(variable;numbers),(blank;space),in,(blank;space),range,(blank;space),(bracket1),(blank;space),isiArray,(blank;space),(bracket2),
     (blank;space),siku2.
-
-a :- phrase_from_file(looptotal,'testing.txt').
