@@ -1,2 +1,5 @@
-if le==0:
+if len(rule_product)==0:
 return EPSILON_RULE_KEY
+elif len(rule_product)==1:
+if rule_product==0:
+return TERMINAL_RULE_KEY

@@ -50,6 +50,6 @@ conditionalElse -->
 
 conditional -->
     blank;
-    "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",rtn;rtn),
+    "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",rtn;rtn;blank),
     (blank;((space;blank),conditionalElse)),
     conditional.
