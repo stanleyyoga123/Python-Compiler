@@ -41,6 +41,7 @@ komenpls -->
     "\'\'\'",petik1,space,anything,"\'\'\'".
 
 komentar -->
-    (space;blank),((pagar,apapuns);komen1;komenpls).
+    space,((pagar,apapuns);komen1;komenpls);
+    ((pagar,apapuns);komen1;komenpls).
 
 
