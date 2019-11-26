@@ -15,14 +15,17 @@ variablebracket -->
     (blank;variable;variablebracket).
 
 insideBracket -->
-    (blank;variable;numbers;operator;variablebracket), (space;blank), logOp, (space;blank), (variable;numbers;operator;variablebracket).
+    (blank;variable;numbers;operator;struck;variablebracket), (space;blank), logOp, (space;blank), (variable;numbers;struck;operator;variablebracket).
+
+insideBracket2 -->
+    (variable;numbers;struck;variablebracket).
 
 operation -->
     insideBracket;
     insideBracket,(space;blank),operation.
 
 bracket -->
-    (operation;blank);
+    (operation;insideBracket2;blank);
     ((operation;variablebracket;"None"),(space;blank),logOp,(space;blank),"(",(space;blank),bracket;operation;variablebracket;"None"),
     (space;blank),
     (")",(space;blank),logOp,(space;blank),bracket;")",(space;blank);")",(space;blank),logOp,(space;blank),variablebracket;"None").
