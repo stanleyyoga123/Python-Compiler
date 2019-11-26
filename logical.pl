@@ -15,7 +15,7 @@ variablebracket -->
     (blank;variable;variablebracket).
 
 insideBracket -->
-    (blank;variable;numbers;operator;variablebracket), logOp, (variable;numbers;operator;variablebracket).
+    (blank;variable;numbers;operator;variablebracket), (space;blank), logOp, (space;blank), (variable;numbers;operator;variablebracket).
 
 operation -->
     insideBracket;
@@ -23,7 +23,7 @@ operation -->
 
 bracket -->
     (operation;blank);
-    ((operation;variablebracket;"None"),logOp,"(",bracket;operation;variablebracket;"None"),
+    ((operation;variablebracket;"None"),(space;blank),logOp,(space;blank),"(",(space;blank),bracket;operation;variablebracket;"None"),
     (")",logOp,bracket;")";")",logOp,variablebracket;"None").
 
 inside -->
