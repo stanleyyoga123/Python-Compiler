@@ -16,4 +16,4 @@ run -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;struck),(space;"\n"),run.
 
 jalan :-
-    phrase_from_file(struck,'testing.txt').
+    phrase_from_file(run,'testing.txt').
