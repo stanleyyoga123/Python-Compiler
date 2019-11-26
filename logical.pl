@@ -24,7 +24,8 @@ operation -->
 bracket -->
     (operation;blank);
     ((operation;variablebracket;"None"),(space;blank),logOp,(space;blank),"(",(space;blank),bracket;operation;variablebracket;"None"),
-    (")",logOp,bracket;")";")",logOp,variablebracket;"None").
+    (space;blank),
+    (")",(space;blank),logOp,(space;blank),bracket;")",(space;blank);")",(space;blank),logOp,(space;blank),variablebracket;"None").
 
 inside -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign);

@@ -1,2 +1,2 @@
-if a>b>c>c>(a>d<(a>s)>s)>s:
+if a>b>c>c>( a > d< ( a>s) >s)>s:
 print(a)
