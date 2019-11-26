@@ -1,16 +1,27 @@
-:- include('utility.pl').  
-
 insideImport -->
-    variable;variable,".",insideImport.
+    space,insideImport;
+    variable;
+    variable,space;
+    variable,behindInsideImport.
 
+behindInsideImport-->
+    space,behindInsideImport;
+    ".",insideImport.
+    
 imports -->
-    "import", space, insideImport, (space;blank).
+    space,imports;
+    "import", space,afterImports.
+
+afterImports-->
+    insideImport;
+    insideImport,space.
 
 importsAs -->
-    imports, "as", space, variable, (space;blank).
+    space,importsAs;
+    imports, space, "as", space, insideImport.
 
 importsFrom -->
-    "from", space, insideImport, space, "import", space, insideImport, (space;blank).
+    "from", space, insideImport, space, "import", space, insideImport.
 
 importsFromAs -->
-    "from", space, insideImport, space, "import", space, insideImport, space, "as", insideImport, (space;blank).
+    "from", space, insideImport, space, "import", space, insideImport, space, "as", insideImport.
