@@ -25,3 +25,8 @@ importsFrom -->
 
 importsFromAs -->
     "from", space, insideImport, space, "import", space, insideImport, space, "as", insideImport.
+
+allTypeImport -->
+    importsFromAs;importsFrom;importsAs;imports.
+
+a:-phrase_from_file(allTypeImport,'testing.txt').
