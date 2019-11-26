@@ -21,7 +21,7 @@ loop -->
     untuk, (blank;space), (numbers;variable),(blank;space),in, (blank;space),(numbers;variable),(blank;space),titikdua.
 
 loop1 -->
-    untuk, (blank;space),isipar,(blank;space),in,(blank;space),range,(blank;space),bracket1,(blank;space),isipar,(blank;space),bracket2,(blank;space),titikdua.
+    untuk, (blank;space),isiloop,(blank;space),in,(blank;space),range,(blank;space),bracket1,(blank;space),isiloop,(blank;space),bracket2,(blank;space),titikdua.
 
 looptotal -->
     loop;loop1.

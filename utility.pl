@@ -77,7 +77,6 @@ operator1 -->
 operator -->
     operator1,(variable;numbers),ignore.
 
-struck-->
-    ignore,variable,ignore,(".",struck;blank),ignore.
+
 w:-
     phrase_from_file(struck,'testing.txt').

@@ -10,6 +10,7 @@
 :- include('assign.pl').
 :- include('return.pl').
 :- include('with.pl').
+:- include('struct.pl').
 
 run -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck);
