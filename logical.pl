@@ -1,3 +1,4 @@
+:-include('utility2.pl').
 logOp -->
     ">"; "<"; ">="; "<="; "=="; "!="; "<>";
     "and"; "or"; "not"; "in"; "is";
@@ -5,6 +6,7 @@ logOp -->
 
 operan1logic -->
     (space,operan1logic);
+    (operan1,operatorlogic);
     (variable,operatorlogic);
     (numbers,operatorlogic);
     (signvarnum,operatorlogic).
@@ -14,14 +16,17 @@ operatorlogic -->
     (space,variable);
     (space,numbers);
     (space,signvarnum);
+    (space,operan1logic);
     (logOp,variable);
     (logOp,numbers);
     (logOp,signvarnum);
     (logOp,operan1);
     (logOp,operator);
+    (logOp,operan1);
     (variable,space);
     (numbers,space);
-    (signvarnum,space)
+    (signvarnum,space);
+    (operan1,space)
     .
 
 variablebracket -->
@@ -74,3 +79,5 @@ conditional -->
     "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",(space;blank),rtn;(space;blank),rtn;blank),
     (blank;((space;blank),conditionalElse)),
     conditional.
+
+    f:-phrase_from_file(operan1logic,'testing.txt').
