@@ -10,10 +10,11 @@
 :- include('assign.pl').
 :- include('return.pl').
 :- include('with.pl').
+:- include('while.pl').
 
 run -->
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck);
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck),(space;"\n"),run.
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck;loopWhile);
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck;loopWhile),(space;"\n"),run.
 
 jalan :-
-    phrase_from_file(struck,'testing.txt').
+    phrase_from_file(run,'testing.txt').
