@@ -54,8 +54,8 @@ bracket -->
     (")",(space;blank),logOp,(space;blank),bracket;")",(space;blank);")",(space;blank),logOp,(space;blank),variablebracket;"None").
 
 inside -->
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign);
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign),(space;"\n"),inside.
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;struck);
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;struck),(space;"\n"),inside.
 
 conditionalElse -->
     (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),inside);

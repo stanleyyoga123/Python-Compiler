@@ -10,6 +10,7 @@
 :- include('assign.pl').
 :- include('return.pl').
 :- include('with.pl').
+:- include('struct.pl').
 :- include('while.pl').
 
 run -->
