@@ -4,11 +4,11 @@
 :- include('import.pl').
 :- include('inoutput.pl').
 :- include('komentar.pl').
-:- include('logical.pl').
+:- include('logical2.pl').
 :- include('loop.pl').
-:- include('raise.pl').
+:- include('raise2.pl').
 :- include('assign.pl').
-:- include('return.pl').
+:- include('return2.pl').
 :- include('with2.pl').
 :- include('struct2.pl').
 :- include('while2.pl').

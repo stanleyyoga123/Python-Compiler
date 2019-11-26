@@ -31,7 +31,7 @@ operatorlogic -->
 variablebracket -->
     variable;
     variable,variablebracket1;
-    variablebracket1;
+    variablebracket1.
     
 variablebracket1 -->
     space,variablebracket1;
@@ -113,7 +113,7 @@ conditionalElse -->
     
 nobracketIRCE -->
     space,nobracketIRCE;
-    ":","\n",nobracketIRCE1;
+    ":","\n",nobracketIRCE1.
 
 nobracketIRCE1 -->
     space,nobracketIRCE1;

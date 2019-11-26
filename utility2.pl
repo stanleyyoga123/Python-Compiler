@@ -112,7 +112,7 @@ behindStruck-->
     (".",variable);
     (space,behindStruck);
     (".", behindStruck);
-    (variable,space);
+    (variable,space)
     .
 w:-
     phrase_from_file(struck,'testing.txt').

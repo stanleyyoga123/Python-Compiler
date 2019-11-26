@@ -8,7 +8,7 @@ loopWhile -->
     
 loopWhile1-->
     space,loopWhile1;
-    numbers;variable;bracket), loopWhile2.
+    (numbers;variable;bracket), loopWhile2.
 
 loopWhile2 -->
     space,loopWhile2;

@@ -15,14 +15,14 @@ sikusiku -->
     behindStruck.
 
 behindStruck-->
-    (".",behindStruck1;
-    (".",behindStruck3;
-    (".",behindStruck4;
-    (".",behindStruck2.
+    ".",behindStruck1;
+    ".",behindStruck3;
+    ".",behindStruck4;
+    ".",behindStruck2.
 
 behindStruck1-->
     space,behindStruck1;
-    variable;struck;
+    variable;struck.
 
 behindStruck2 -->
     space,behindStruck2;
