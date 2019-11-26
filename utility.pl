@@ -9,7 +9,7 @@ char -->
     "E";"F";"G";"H";"I";"J";"K";"L";"M";"N";
     "O";"P";"Q";"R";"S";"T";"U";"V";"W";"X";
     "Y";"Z";"_".
-    
+dot-->".".
 bracket1 --> "(".
 bracket2 --> ")".
 koma --> ",".
@@ -77,7 +77,6 @@ operator1 -->
 operator -->
     operator1,(variable;numbers),ignore.
 
-struck-->
-    ignore,variable,ignore,(".",struck;blank),ignore.
+
 w:-
     phrase_from_file(struck,'testing.txt').
