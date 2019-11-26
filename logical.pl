@@ -32,25 +32,25 @@ inside -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign),(space;"\n"),inside.
 
 conditionalElse -->
-    blank;
-    ("elif",(space;blank),bracket,(space;blank),":","\n",inside);
-    ("elif",(space;blank),bracket,(space;blank),":","\n",rtn);
+    (space;blank);
+    (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),inside);
+    (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),rtn);
     
-    ("else",(space;blank),":","\n",inside);
-    ("else",(space;blank),":","\n",rtn);
+    (space;blank),("else",(space;blank),":","\n",(space;blank),inside);
+    (space;blank),("else",(space;blank),":","\n",(space;blank),rtn);
     
-    ("elif",(space;blank),bracket,":","\n",conditionalElse);
-    ("elif",(space;blank),bracket,(space;blank),":","\n",inside,conditionalElse);
-    ("elif",(space;blank),bracket,(space;blank),":","\n",rtn,conditionalElse);
-    ("elif",(space;blank),bracket,(space;blank),":","\n",(inside,"\n",rtn),conditionalElse);
+    (space;blank),("elif",(space;blank),bracket,":","\n",conditionalElse);
+    (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),inside,conditionalElse);
+    (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),rtn,conditionalElse);
+    (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(inside,"\n",(space;blank),rtn),conditionalElse);
     
-    ("else",(space;blank),":","\n",conditionalElse);
-    ("else",(space;blank),":","\n",inside,conditionalElse);
-    ("else",(space;blank),":","\n",rtn,conditionalElse);
-    ("else",(space;blank),":","\n",(inside,"\n",rtn),conditionalElse).
+    (space;blank),("else",(space;blank),":","\n",conditionalElse);
+    (space;blank),("else",(space;blank),":","\n",(space;blank),inside,conditionalElse);
+    (space;blank),("else",(space;blank),":","\n",(space;blank),rtn,conditionalElse);
+    (space;blank),("else",(space;blank),":","\n",(inside,"\n",(space;blank),rtn),conditionalElse).
 
 conditional -->
     blank;
-    "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",rtn;rtn;blank),
+    "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",(space;blank),rtn;(space;blank),rtn;blank),
     (blank;((space;blank),conditionalElse)),
     conditional.
