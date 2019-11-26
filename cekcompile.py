@@ -1,1 +1,1 @@
-with open('example.txt','w') as my:
+while 

@@ -32,7 +32,6 @@ inside -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign),(space;"\n"),inside.
 
 conditionalElse -->
-    (space;blank);
     (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),inside);
     (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),rtn);
     
@@ -50,7 +49,7 @@ conditionalElse -->
     (space;blank),("else",(space;blank),":","\n",(inside,"\n",(space;blank),rtn),conditionalElse).
 
 conditional -->
-    blank;
+    (blank;space);
     "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",(space;blank),rtn;(space;blank),rtn;blank),
     (blank;((space;blank),conditionalElse)),
     conditional.
