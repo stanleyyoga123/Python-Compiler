@@ -23,7 +23,10 @@ petik -->
     komen2;komen2,petik.
 
 komen1 -->
-    "\"\"\"",(blank;petik),(blank;space),anything,"\"\"\"".
+    "\"\"\"",anything,"\"\"\"";
+    "\"\"\"",petik,anything,"\"\"\"";
+    "\"\"\"",space,anything,"\"\"\"";
+    "\"\"\"",petik,space,anything,"\"\"\"".
 
 komenlagi -->
     "\'".
@@ -32,7 +35,10 @@ petik1 -->
     komenlagi;komenlagi,petik1.
 
 komenpls -->
-    "\'\'\'",(blank;petik1),(blank;space),anything,"\'\'\'".
+    "\'\'\'",anything,"\'\'\'";
+    "\'\'\'",petik1,anything,"\'\'\'";
+    "\'\'\'",space,anything,"\'\'\'";
+    "\'\'\'",petik1,space,anything,"\'\'\'".
 
 komentar -->
     (space;blank),((pagar,apapuns);komen1;komenpls).
