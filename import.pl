@@ -1,4 +1,3 @@
-:-include('utility.pl').
 insideImport -->
     space,insideImport;
     variable;

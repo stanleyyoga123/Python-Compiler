@@ -5,7 +5,7 @@ struck-->
     (variable,(blank;space),behindStruck).
 
 sikusiku -->
-    siku1,(blank;isi3;struck;isi;isi1;variable;space),siku2,sikusiku;behindStruck.
+    siku1,(blank;isi3;struck;isi;isi1;variable;space;numbers),siku2,sikusiku;behindStruck.
 
 behindStruck-->
     blank;

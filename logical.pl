@@ -40,21 +40,24 @@ variablebracket -->
     (blank;variable;variablebracket).
 
 insideBracket -->
-    (blank;variable;numbers;operator;variablebracket), (space;blank), logOp, (space;blank), (variable;numbers;operator;variablebracket).
+    (blank;variable;numbers;operator;struck;variablebracket), (space;blank), logOp, (space;blank), (variable;numbers;struck;operator;variablebracket).
+
+insideBracket2 -->
+    (variable;numbers;struck;variablebracket).
 
 operation -->
     insideBracket;
     insideBracket,(space;blank),operation.
 
 bracket -->
-    (operation;blank);
+    (operation;insideBracket2;blank);
     ((operation;variablebracket;"None"),(space;blank),logOp,(space;blank),"(",(space;blank),bracket;operation;variablebracket;"None"),
     (space;blank),
     (")",(space;blank),logOp,(space;blank),bracket;")",(space;blank);")",(space;blank),logOp,(space;blank),variablebracket;"None").
 
 inside -->
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;struck);
-    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;struck),(space;"\n"),inside.
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign);
+    (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign),(space;"\n"),inside.
 
 conditionalElse -->
     (space;blank),("elif",(space;blank),bracket,(space;blank),":","\n",(space;blank),inside);

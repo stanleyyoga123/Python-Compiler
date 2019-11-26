@@ -12,6 +12,7 @@
 :- include('with.pl').
 :- include('struct.pl').
 :- include('while.pl').
+:- include('struct.pl').
 
 run -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck;loopWhile);
