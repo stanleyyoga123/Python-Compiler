@@ -19,4 +19,4 @@ run -->
     (blank;class;fungsi;imports;importsAs;importsFrom;importsFromAs;input;isitotal;komentar;looptotal;raise;assign;conditional;defRet;raise;with;struck;loopWhile),(space;"\n"),run.
 
 jalan :-
-    phrase_from_file(run,'testing.txt').
+    phrase_from_file(input,'testing.txt').

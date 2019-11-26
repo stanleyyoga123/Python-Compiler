@@ -1,4 +1,23 @@
+
 bracketSiku -->
     variable, "[",(variable;blank),"]".
+
+isiAssign1 -->
+    space,isiAssign1;
+    parameter.
+
+isiAssign -->
+    space,isiAssign;
+    variable,isiAssign1.
+
+assign2 -->
+    space,assign2;
+    (variable;numbers;isi1;isi;bracketSiku;array;struck;isiAssign).
+
+assign1 -->
+    space,assign1;
+     "=", assign2.
+
 assign -->
-    variable, (space;blank), "=", (space;blank), (variable;numbers;isi1;isi;bracketSiku;array;struck;((space;blank),variable,(blank;space),parameter)).
+    variable,assign1.
+
