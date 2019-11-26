@@ -1,6 +1,10 @@
 :-include('utility.pl').
 operatorEqual -->
-    ignore,variable,ignore,equalOperator,(operator;variable;number).
+    space,operatorEqual;
+    variable,operatorEqual1;
+operatorEqual1 -->
+    space,operatorEqual1;
+    equalOperator,(operator;variable;number).
 
 equalOperator -->
     "=";"+=";"-=";"*=";"/=";"%=";"**=";"//=".
