@@ -34,11 +34,13 @@ conditionalElse -->
     blank;
     ("elif",(space;blank),bracket,(space;blank),":","\n",inside);
     ("else",(space;blank),":","\n",inside);
+    ("elif",(space;blank),bracket,(space;blank),":","\n",(inside,"\n",rtn),conditionalElse);
     ("elif",(space;blank),bracket,(space;blank),":","\n",inside,conditionalElse);
+    ("else",(space;blank),bracket,(space;blank),":","\n",(inside,"\n",rtn),conditionalElse);
     ("else",(space;blank),":","\n",inside,conditionalElse).
 
 conditional -->
     blank;
-    "if", (space;blank), bracket, (space;blank), ":", "\n", inside,
+    "if", (space;blank), bracket, (space;blank), ":", "\n", (inside;inside,"\n",rtn;rtn),
     (blank;((space;blank),conditionalElse)),
     conditional.
